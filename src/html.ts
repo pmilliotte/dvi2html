@@ -56,7 +56,8 @@ export default class HTMLMachine extends Machine {
           "<svg beginpicture>",
           `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" ` +
             `xmlns:xlink="http://www.w3.org/1999/xlink" ` +
-            `width="${this.paperwidth}pt" height="${this.paperheight}pt" ` +
+            // `width="${this.paperwidth}pt" height="${this.paperheight}pt" ` +
+            `style="transform: scale(1)" ` +
             `viewBox="-72 -72 ${this.paperwidth} ${this.paperheight}">`
         );
       }
