@@ -8,8 +8,7 @@ import papersize from "./specials/papersize";
 import HTMLMachine from "./html";
 import TextMachine from "./text";
 
-export var Machines = { HTML: HTMLMachine,
-			text: TextMachine };
+export var Machines = { HTML: HTMLMachine, text: TextMachine };
 
 import { dviParser, execute, mergeText } from "./parser";
 export { dviParser, execute, mergeText };
@@ -18,15 +17,17 @@ export var specials = {
   color: color,
   svg: svg,
   //  html: html,
-  papersize: papersize
+  papersize: papersize,
 };
 
-export async function dvi2html( dviStream, htmlStream ) {
-  let parser = papersize(svg(psFile(ps(color(mergeText(dviParser(dviStream)))))));
+export async function dvi2html(dviStream, htmlStream) {
+  let parser = papersize(
+    svg(psFile(ps(color(mergeText(dviParser(dviStream))))))
+  );
 
-  let machine = new HTMLMachine( htmlStream );
+  let machine = new HTMLMachine(htmlStream);
 
-  await execute( parser, machine );
+  await execute(parser, machine);
 
   return machine;
 }
